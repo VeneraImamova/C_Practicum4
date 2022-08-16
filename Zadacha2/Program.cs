@@ -3,40 +3,19 @@
 // 82 -> 10
 // 9012 -> 12
 
-// Console.WriteLine("Введите число: ");
-// int number = Convert.ToInt32(Console.ReadLine());
-
-// int GetSumNumbers(int num)
-// {
-//     int count = 0; 
-//     int sum = 0;
-//     int i = num.length;
-//     while (count <=i)
-//     {
-//         sum = sum + num[count];
-//         count++;
-
-//     }
-//     return sum;
-// }
-
-
-// Console.WriteLine($"Сумма цифр {number} = {GetSumNumbers(number)}");
-
-
 Console.WriteLine("Введите число: ");
-string number = Console.ReadLine();
 
-int GetSumNumbers(string num)
+int number = Convert.ToInt32(Console.ReadLine());
+
+int GetSumNumbers (int num)
 {
     int sum = 0;
-    for (int i = 0; i <= num; i++)
+    while (num > 0)
     {
-        sum = sum + num[i];
+        sum = sum + num % 10; 
+        num = num / 10;
     }
- 
     return sum;
 }
 
-
-Console.WriteLine($"Сумма цифр {number} = {GetSumNumbers(number)}");
+Console.WriteLine($"Сумма цифр в числе {number} = {GetSumNumbers(number)}");
